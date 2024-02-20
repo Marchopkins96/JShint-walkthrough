@@ -13,7 +13,9 @@ async function getStatus(e) {
     const data = await response.json();
 
     if (response.ok) {
-        console.log(data.expiry);
+        displayStatus(data);
+    } else {
+        throw new Error(data.error);
     }
 
 }
